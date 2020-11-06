@@ -1,0 +1,203 @@
+:root {
+    --blue1: #003333;
+    --blue2: #007777;
+    --blue3: #009797;
+    --whitish: rgb(235, 255, 255);
+    --transWhite: rgba(235, 255, 255, 0.2);
+    --transWhiter: rgba(235, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue2);
+    transition: all 0.3s linear;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue3);
+}
+
+body {
+    background-color: var(--blue1);
+    padding: 0px 40px;
+    display: flex;
+    font-family: poppins, sans-serif; //martel
+
+}
+
+main {
+    /*background-color: chocolate;*/
+    width: 320px;
+    width:100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#add-task-pane {
+    /*background-color: cadetblue;*/
+    padding: 20px;
+}
+
+
+#todo-list {
+    overflow-y: scroll;
+    flex: 1;
+    max-height: 80vh;
+    padding: 0px 20px;
+    color: var(--whitish);
+}
+
+#heading {
+    font-family: martel, serif;
+    text-align: center;
+    color: var(--whitish);
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+#add-task-form {
+    background-color: var(--whitish);
+    width: 60%;
+    margin: auto;
+    display: flex;
+}
+
+#task-name {
+    flex: 1;
+    margin-right: 2px;
+    border: none;
+    border-radius: 0%;
+    padding: 0px 10px;
+    height: 30px;
+    transform: all 0.5s linear;
+    background-color: var(--whitish);
+    color: var(--blue1);
+    font-family: poppins, sans-serif;
+    transition: all 0.2s linear;
+    min-width: 1px;
+    font-size: 16px;
+}
+
+#task-name:hover {
+    outline: var(--blue3) solid 2px;
+}
+
+#task-name:focus {
+    outline: var(--blue3) solid 2px;
+}
+
+#add-task-button {
+    width: 30px;
+    background-color: var(--whitish);
+    border-width: 0;
+    border-radius: 0%;
+    color: var(--blue1);
+    transition: all 0.2s linear;
+}
+
+#add-task-button:hover {
+    background-color: var(--blue1);
+    color: var(--whitish);
+    outline: var(--blue3) solid 2px;
+}
+
+#add-task-button:focus {
+    outline: var(--blue3) solid 2px;
+    background-color: var(--whitish);
+    color: var(--blue1);
+}
+
+.todo-task {
+    background-color: var(--transWhite);
+    width: 100%;
+    margin: 20px 0px;
+    padding: 10px 10px;
+}
+
+.checkbox {
+    /*background-color: chartreuse;*/
+    float: right;
+    padding: 5px;
+    border-radius: 10%;
+    transition: all 0.3s linear;
+}
+
+.checkbox:hover {
+    background-color: var(--transWhite);
+    border-radius: 40%;
+    color: white;
+}
+
+.checkbox:active {
+    color: rgb(241, 255, 116);
+}
+
+@media (max-width: 769px)
+{
+    body{
+        font-size: 14px;
+    }
+
+    #task-name {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 426px)
+{
+    #add-task-form {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        
+    }
+}
+
+@media (max-width: 350px)
+{
+    body {
+        font-size: 12px;
+    }
+
+    #heading {
+        font-size: 22px;
+    }
+
+    #task-name {
+        font-size: 12px;
+        height: 25px;
+    }
+
+    #add-task-button {
+        width: 25px;
+    }
+
+    .todo-task {
+        background-color: var(--transWhite);
+        width: 100%;
+        margin: 14px 0px;
+        padding: 7px 7px;
+    }
+}
