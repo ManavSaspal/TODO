@@ -5,14 +5,18 @@ addBtn.addEventListener("click", addTask);
 let count = 0;
 
 function addTask() {
-    count += 1;
     let todoList = document.getElementById("todo-list");
-
     let newTask = document.createElement("div");
-    todoList.appendChild(newTask);
-    newTask.className = "todo-task";
     let taskName = document.getElementById("task-name");
-    newTask.innerHTML = taskName.value + '<span class="icon-checkbox-unchecked checkbox"' + ' id="box' + count.toString() + '"' + ' onclick = checkUncheck(this.id)></span>'; //text content didn't work, why?
+    if (taskName.value.length != 0 ) {
+        todoList.appendChild(newTask);
+        count += 1;
+        newTask.className = "todo-task";
+        newTask.innerHTML = taskName.value + '<span class="icon-checkbox-unchecked checkbox"' + ' id="box' + count.toString() + '"' + ' onclick = checkUncheck(this.id)></span>'; //text content didn't work, why?
+        taskName.value = null;
+    } else {
+        alert("What are you even? Atleast enter smth oooof");
+    }
 }
 
 /*let checkbox = document.getElementById("checkbox");
