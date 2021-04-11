@@ -12,7 +12,7 @@ function addTask() {
         todoList.appendChild(newTask);
         count += 1;
         newTask.className = "todo-task";
-        newTask.innerHTML = taskName.value + '<span class="icon-checkbox-unchecked checkbox"' + ' id="box' + count.toString() + '"' + ' onclick = checkUncheck(this.id)></span>'; //text content didn't work, why?
+        newTask.innerHTML = "<span id='task-view-name'>" + taskName.value + "</span>" + '<span class="icon-checkbox-unchecked checkbox"' + ' id="box' + count.toString() + '"' + ' onclick = checkUncheck(this.id)></span>'; //text content didn't work, why?
         taskName.value = null;
     } else {
         alert("What are you even? Atleast enter smth oooof");
@@ -30,10 +30,13 @@ function checkUncheck(buttonNo) {
 */
 let checkbox = document.getElementById(buttonNo);
 
-if(checkbox.className == "icon-checkbox-checked checkbox")
+if(checkbox.className == "icon-checkbox-checked checkbox"){
     checkbox.className = "icon-checkbox-unchecked checkbox";
+    document.getElementById('task-view-name').classList.remove('striked')
+}
 else {
     checkbox.className = "icon-checkbox-checked checkbox";
+    document.getElementById('task-view-name').classList.add('striked')
 
-    }
+}
 }
