@@ -38,7 +38,7 @@ body {
     background-color: var(--blue1);
     padding: 0px 40px;
     display: flex;
-    font-family: poppins, sans-serif; //martel
+    font-family: poppins, sans-serif; /* martel */
 
 }
 
@@ -139,6 +139,10 @@ main {
     padding: 5px;
     border-radius: 10%;
     transition: all 0.3s linear;
+}
+
+.striked{
+    text-decoration: line-through;
 }
 
 .checkbox:hover {
